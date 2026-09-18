@@ -5,7 +5,7 @@ export interface Contributor {
   contributions: number;
 }
 
-const CONTRIBUTORS_DATA_URL = "https://raw.githubusercontent.com/PaperMC/website/data/contributors.json";
+const CONTRIBUTORS_DATA_URL = "https://raw.githubusercontent.com/FerriteMC/website/data/contributors.json";
 
 export async function fetchContributors(): Promise<Contributor[]> {
   const response = await fetch(CONTRIBUTORS_DATA_URL);
@@ -18,12 +18,12 @@ export async function fetchContributors(): Promise<Contributor[]> {
 }
 
 export const getProjectRepository = (project: string, version: string): string => {
-  if (project !== "paper") return `https://github.com/PaperMC/${project}`;
-  if (project === "paper" && version === "1.7.10") return "https://github.com/PaperMC/Paper-1.7";
+  if (project !== "paper") return `https://github.com/FerriteMC/${project}`;
+  if (project === "paper" && version === "1.7.10") return "https://github.com/FerriteMC/Papercut-1.7";
 
   const baseVersion = "1.21.4"; // after the hardfork
 
-  return isVersionBelow(version, baseVersion) ? "https://github.com/PaperMC/Paper-Archive" : "https://github.com/PaperMC/Paper";
+  return isVersionBelow(version, baseVersion) ? "https://github.com/FerriteMC/Papercut-Archive" : "https://github.com/FerriteMC/Papercut";
 };
 
 function isVersionBelow(version: string, base: string): boolean {

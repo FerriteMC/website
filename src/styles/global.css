@@ -57,8 +57,12 @@
   --grid-template-columns-18: repeat(18, minmax(0, 1fr));
   --grid-template-columns-20: repeat(20, minmax(0, 1fr));
 
+  --color-rust-500: #E85D3A;
+  --color-rust-400: #eb7a52;
+  --color-rust-600: #d04a2a;
+
   --scale-120: 1.2;
-}
+ }
 
 @theme {
   /* These colours come from Fill - changes must be synchronized. */
@@ -232,7 +236,7 @@ button {
   &.btn-outline {
     --btn-fg-hover: var(--color-white);
   }
-  --btn-color: var(--color-blue-500);
+  --btn-color: var(--color-rust-500);
 }
 
 @utility btn-danger {

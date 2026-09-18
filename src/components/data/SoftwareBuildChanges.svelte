@@ -32,7 +32,7 @@
         const n = m[4].slice(1);
         segs.push({
           kind: "link",
-          url: `https://github.com/PaperMC/${project}/issues/${n}`,
+          url: `https://github.com/FerriteMC/${project}/issues/${n}`,
           text: `#${n}`,
         });
       }

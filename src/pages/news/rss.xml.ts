@@ -22,9 +22,9 @@ export const GET: APIRoute = async ({ site }) => {
     });
 
   return rss({
-    title: "PaperMC News",
-    description: "Updates and news from the PaperMC project",
-    site: site?.toString() ?? "https://papermc.io",
+    title: "FerriteMC News",
+    description: "Updates and news from the FerriteMC project",
+    site: site?.toString() ?? "https://ferritemc.io",
     items,
     trailingSlash: false,
   });

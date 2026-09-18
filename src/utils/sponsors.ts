@@ -42,7 +42,7 @@ export type SponsorData = {
   ghData: GitHubSponsorsData;
 };
 
-const SPONSORS_DATA_URL = "https://raw.githubusercontent.com/PaperMC/website/data/sponsors.json";
+const SPONSORS_DATA_URL = "https://raw.githubusercontent.com/FerriteMC/website/data/sponsors.json";
 
 export async function fetchAllSponsors(): Promise<SponsorData> {
   const response = await fetch(SPONSORS_DATA_URL);

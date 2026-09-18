@@ -42,7 +42,7 @@ const { id, name, icon, github, eol } = Astro.props;
         <Button variant={eol ? "filled-danger" : "filled"} href={github ?? `/downloads/${id}`} external={Boolean(github)}>
           {github ? "GitHub" : "Downloads"}
         </Button>
-        <Button variant="outlined" href={`https://docs.papermc.io/${id}`} external> Documentation </Button>
+        <Button variant="outlined" href={`https://docs.ferritemc.io/${id}`} external> Documentation </Button>
         <Button variant="outlined" href="#loading" className="jd-link-btn hidden md:block" external> Javadoc </Button>
       </div>
     </div>
@@ -69,7 +69,7 @@ const { id, name, icon, github, eol } = Astro.props;
       const { versions } = await getProject(software);
       const latest = getLatestVersion(versions);
 
-      button.setAttribute("href", `https://jd.papermc.io/${software}/${latest}`);
+      button.setAttribute("href", `https://jd.ferritemc.io/${software}/${latest}`);
     }
   }
 

@@ -31,13 +31,13 @@ We would like to thank everyone that worked on this update:
   ]}
 />
 
-If you'd like to support PaperMC as a whole, you can find more information at [papermc.io/sponsors](https://papermc.io/sponsors).
+If you'd like to support FerriteMC as a whole, you can find more information at [ferritemc.io/sponsors](https://ferritemc.io/sponsors).
 
 ---
 
 ## Release Channel Changes
 
-Among other changes — and the new V3 of our [Downloads API](https://docs.papermc.io/misc/downloads-api/) — release channels have changed to:
+Among other changes — and the new V3 of our [Downloads API](https://docs.ferritemc.io/misc/downloads-api/) — release channels have changed to:
 
 1. `alpha`: Equivalent to the prior `experimental` label
 2. `beta`: New middle-point for builds that aren't entirely unstable but partially unfinished (e.g., missing config options or, as with the long 1.21.5 phase, missing datafixer changes)
@@ -113,8 +113,8 @@ New events include:
 Dialog API will be merged into 1.21.7 soon — we’ll post a dev announcement once it’s in!
 You can see its current status here:
 
-- [Compare changes](https://github.com/PaperMC/Paper/compare/ab1b472c5663f4123632770db8ea509b9be49e20..11a1e0ffd25be0224c878ebaf629191863264861)
-- [Pull Request #12671](https://github.com/PaperMC/Paper/pull/12671)
+- [Compare changes](https://github.com/FerriteMC/Paper/compare/ab1b472c5663f4123632770db8ea509b9be49e20..11a1e0ffd25be0224c878ebaf629191863264861)
+- [Pull Request #12671](https://github.com/FerriteMC/Paper/pull/12671)
 
 You will also be able to open dialogs via a new click event type using `ClickEvent.openDialog`.
 For custom click actions, you may use `PlayerCustomClickEvent`, but the preferred option is to directly pass a callback in `DialogAction.customClick`, which will be run when the player clicks the specified element.
@@ -147,7 +147,7 @@ You must now use those specific entity types and can no longer swap between them
 
 A small selection of recent API additions that may be interesting:
 
-- [Registry events](https://docs.papermc.io/paper/dev/registries/) for modifying or adding custom cat, chicken, cow, frog, pig, and wolf variants, as well as damage types and paintings
+- [Registry events](https://docs.ferritemc.io/paper/dev/registries/) for modifying or adding custom cat, chicken, cow, frog, pig, and wolf variants, as well as damage types and paintings
 - `Player#openVirtualSign` to open unplaced signs (changes via `UncheckedSignChangeEvent`)
 - `Entity#getPickItemStack` to get the spawn egg/item for an entity when using the pick action
 - `HumanEntity#setCooldown(Key, int ticks)` and getter for grouped cooldowns (not per-item)

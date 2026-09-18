@@ -12,7 +12,7 @@ Since the project's inception, Paper has been built on top of Spigot, consistent
 
 Hardforking **removes this unnecessary delay** and sees Paper become its own independent project, **streamlining development of the server and major missing API**, such as our recent registry and item data component API. This **does not mean** that existing configs/API/behavior/etc. will be removed. Starting with 1.21.4, Paper will simply no longer be bound to Spigot's future changes, enabling us and the community to move forwards on our own terms.
 
-> While this may _sound_ scary, we have bundled up some helpful disclaimers for each relevant user group down below. We are committed to making this process as smooth as possible for everyone. If any more questions arise, feel free to ask us [on our Discord](https://discord.gg/papermc)!
+> While this may _sound_ scary, we have bundled up some helpful disclaimers for each relevant user group down below. We are committed to making this process as smooth as possible for everyone. If any more questions arise, feel free to ask us [on our Discord](https://discord.gg/ferritemc)!
 
 ## Server owners / administrators
 
@@ -24,13 +24,13 @@ We presume a large number of plugins to prefer Paper compatibility over Spigot a
 
 Just like for server owners, there will be **no initial change** in the plugin API. Existing methods inherited from Spigot are maintained and will continue to work. This includes methods deprecated by us, like legacy text/chat color. However, **we will no longer pull all new API added to Spigot after hardfork**. To avoid accidentally calling such methods, **we strongly suggest building your plugin against the Paper-API dependency**. We are still open to manually pulling some new upstream API into Paper to ensure plugin developers do not lose out on functionality, but you should not rely on it.
 
-Usage of server internals via [paperweight-userdev](https://docs.Papermc.io/paper/dev/userdev) will also continue to work as it has before, however, **we recommend _slowly_ preparing your plugin to run on a Mojang-mapped server with jar and reflection remapping disabled**. This can be achieved with the `-Dpaper.disablePluginRemapping=true` startup flag. If you aren't already using paperweight-userdev despite using internal Vanilla classes directly, you should move towards it. If you are, you don't need to do anything else, as you can simply later remove the obfuscation step and will be compatible with the future change - only reflective calls need to be addressed. However, we will give you ample time to prepare for this and will continue to automatically remap plugins for a while. **Once that happens, it will become much easier to support multiple versions with little internal changes, which the obfuscated mappings and arbitrary CraftBukkit package relocation currently prevent.** The single set of standard mappings will also make debugging and code-sharing easier.
+Usage of server internals via [paperweight-userdev](https://docs.ferritemc.io/paper/dev/userdev) will also continue to work as it has before, however, **we recommend _slowly_ preparing your plugin to run on a Mojang-mapped server with jar and reflection remapping disabled**. This can be achieved with the `-Dpaper.disablePluginRemapping=true` startup flag. If you aren't already using paperweight-userdev despite using internal Vanilla classes directly, you should move towards it. If you are, you don't need to do anything else, as you can simply later remove the obfuscation step and will be compatible with the future change - only reflective calls need to be addressed. However, we will give you ample time to prepare for this and will continue to automatically remap plugins for a while. **Once that happens, it will become much easier to support multiple versions with little internal changes, which the obfuscated mappings and arbitrary CraftBukkit package relocation currently prevent.** The single set of standard mappings will also make debugging and code-sharing easier.
 
-With the switch to Paper-API and later a Mojang-mapped server, your plugins _may_ no longer run on Spigot. **Paper's market share of 85-90% on recent versions** (according to some of the largest plugins on bStats, including forks of Paper) should make it easy for you to support almost all of your users in the post-hardfork versions, even without being compatible with Spigot. Publishing plugins that _require_ Paper can be done on numerous platforms, most notably [Hangar](https://hangar.papermc.io/) and [modrinth](https://modrinth.com/).
+With the switch to Paper-API and later a Mojang-mapped server, your plugins _may_ no longer run on Spigot. **Paper's market share of 85-90% on recent versions** (according to some of the largest plugins on bStats, including forks of Paper) should make it easy for you to support almost all of your users in the post-hardfork versions, even without being compatible with Spigot. Publishing plugins that _require_ Paper can be done on numerous platforms, most notably [Hangar](https://hangar.ferritemc.io/) and [modrinth](https://modrinth.com/).
 
 ## Moving our old version branches to a new repo
 
-Because we are merging in API/API-implementation source file history and the new branch will have an entirely unrelated git commit history to the previous branches, **we will eventually delete all older version branches, everything from `ver/1.8.8` up to `ver/1.21.3`. If you are in any way referencing them on our current repository, make sure to update their URL to: [new archive repository](https://github.com/PaperMC/Paper-archive)**
+Because we are merging in API/API-implementation source file history and the new branch will have an entirely unrelated git commit history to the previous branches, **we will eventually delete all older version branches, everything from `ver/1.8.8` up to `ver/1.21.3`. If you are in any way referencing them on our current repository, make sure to update their URL to: [new archive repository](https://github.com/FerriteMC/Paper-archive)**
 
 Our current compressed repo size is over 90MB - the new branch, despite having many many more commits, will be less than 35MB in packed size, meaning cloning the repository will become much faster once the old branches have been removed. On top of that, looking at the previous patch-file history will also be a lot easier thanks to cleaning up index and line changes from the history.
 
@@ -46,7 +46,7 @@ The main change you will have to deal with is the updated decompiler and mapping
 
 ## Next steps/rough timeline
 
-It's hard to give an exact timeline, but you will be able to follow the rough progress of our hard fork process in the following GitHub issue: https://github.com/PaperMC/Paper/issues/11735
+It's hard to give an exact timeline, but you will be able to follow the rough progress of our hard fork process in the following GitHub issue: https://github.com/FerriteMC/Paper/issues/11735
 
 1. We will spend **the following weeks** updating the repository by changing the patch structure and fixing endless patch conflicts from the updated decompiler and new set of local/parameter mappings.
 1. Once that is done, **we will push these builds as experimental builds to ensure we didn't break any backwards compatibility** or introduced any new issues.
@@ -63,6 +63,6 @@ This change allows us to work on snapshots, and to more freely work on major mis
 **Server admins**: No action needed, but you might no longer be able to go back to Spigot starting with 1.21.4.
 **Plugin developers**: No immediate action needed, but you should compile against Paper-API starting with 1.21.4.
 **Paper contributors**: You will have to redo your PRs, but we will tell you more about that later and provide you with useful scripts and tools.
-**Forks/server hosts**: Migrate any use of the old version branches (e.g. `ver/1.8.8`, `ver/1.21.1`; everything below 1.21.4) to the [new archive repository](https://github.com/PaperMC/Paper-archive).
+**Forks/server hosts**: Migrate any use of the old version branches (e.g. `ver/1.8.8`, `ver/1.21.1`; everything below 1.21.4) to the [new archive repository](https://github.com/FerriteMC/Paper-archive).
 
 Thank you for making the Paper organization into what it has become today, we're grateful that so many people choose to use our software! Focusing on preparations for this process took a toll on Paper pull requests and Hangar activity, but we'll be able to churn through these much faster afterwards!

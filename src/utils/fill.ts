@@ -1,6 +1,6 @@
 import type { Build, BuildChannel, Project } from "@/utils/types";
 
-const API_ENDPOINT = "https://fill.papermc.io/v3";
+const API_ENDPOINT = "https://fill.ferritemc.io/v3";
 
 export async function getProject(project: string): Promise<Project> {
   const res = await fetch(`${API_ENDPOINT}/projects/${project}`);

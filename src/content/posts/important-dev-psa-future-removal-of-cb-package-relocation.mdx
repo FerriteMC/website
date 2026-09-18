@@ -14,7 +14,7 @@ As already announced before, at some point in the foreseeable future, **we will 
 
 Note: This also includes testing of automated remapping of plugins to make them run on Mojang mapped servers, even if a plugin is compiled against the obfuscated class and method names (if you don't use any vanilla internals, this doesn't affect you). So even if you have already fixed CB package parsing, please check whether your plugins are able to run on this jar if they are using internals (or "nms").
 
-Once these changes are present in stable Paper builds, you can expect a much better experience when using the often dreaded internals by using our [userdev](https://docs.papermc.io/paper/dev/userdev) Gradle plugin. Most notably, small Minecraft updates will no longer unconditionally break your plugins.
+Once these changes are present in stable Paper builds, you can expect a much better experience when using the often dreaded internals by using our [userdev](https://docs.ferritemc.io/paper/dev/userdev) Gradle plugin. Most notably, small Minecraft updates will no longer unconditionally break your plugins.
 
 ## How to make sure your plugin does not break
 
@@ -70,7 +70,7 @@ The Minecraft version strings you can parse and evaluate to your heart's content
 
 ## As a server owner
 
-If you are running a somewhat recent server version with up-to-date plugins (!), you should also test whether your plugins are able to run on the [test server jar](https://github.com/PaperMC/testing/releases/tag/no-relocation) also linked above. **Please make sure not to use the server jar on your main servers, but to copy your plugin setup to a separate test server.**
+If you are running a somewhat recent server version with up-to-date plugins (!), you should also test whether your plugins are able to run on the [test server jar](https://github.com/FerriteMC/testing/releases/tag/no-relocation) also linked above. **Please make sure not to use the server jar on your main servers, but to copy your plugin setup to a separate test server.**
 
 The error that plugin developers need to fix will look something like this:
 

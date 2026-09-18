@@ -13,23 +13,23 @@ import SoftwarePreview, { SoftwarePreviewType } from "@/components/data/Software
 
 <Layout
   title="Home"
-  description={"PaperMC is a Minecraft software organization focusing on improving the game’s ecosystem with faster and more secure software."}
-  keywords={["papermc", "paper", "velocity", "minecraft", "performance"]}
+  description={"FerriteMC is a Rust-powered Minecraft software organization focusing on improving the game's ecosystem with faster and more secure software."}
+  keywords={["ferritemc", "papercut", "relay", "blocklest", "rust", "minecraft", "performance"]}
   canonical="/"
 >
   <header class="mx-auto flex max-w-7xl flex-row px-4 pt-32 pb-26 lg:pt-44 lg:pb-38">
     <div class="flex-1">
       <h1 class="text-4xl leading-normal font-medium lg:text-5xl lg:leading-normal">
-        Modern software. <br />
-        <span class="text-blue-500">Built to perform.</span>
+        Rust-powered software. <br />
+        <span class="text-rust-500">Built to perform.</span>
       </h1>
       <p class="mt-4 text-xl">
-        PaperMC improves Minecraft&apos;s ecosystem with fast, secure software and an expanding plugin API, providing quick releases and
+        FerriteMC improves Minecraft's ecosystem with Rust-powered, fast, secure software and an expanding plugin API, providing quick releases and
         helpful support as the most widely used, performant, and stable software available.
       </p>
       <div class="mt-8 flex flex-row gap-4">
         <Button variant="filled" href="/downloads"> Downloads </Button>
-        <Button variant="outlined" href="https://docs.papermc.io" external> Documentation </Button>
+        <Button variant="outlined" href="https://docs.ferritemc.io" external> Documentation </Button>
       </div>
     </div>
     <div class="hidden flex-1 justify-end lg:flex">
@@ -39,29 +39,47 @@ import SoftwarePreview, { SoftwarePreviewType } from "@/components/data/Software
   <section id="software" class="bg-background-light-0 dark:bg-background-dark-80 w-full border-y pt-12 pb-8">
     <div class="mx-auto max-w-7xl">
       <h2 class="mb-4 px-6 text-xl font-semibold md:text-2xl lg:px-4">
-        Your server deserves the <span class="text-blue-500">best.</span>
+        Your server deserves the <span class="text-rust-500">best.</span>
       </h2>
       <div class="grid gap-2 px-2 md:grid-cols-3 xl:gap-4">
         <SoftwarePreview
-          id="paper"
-          name="Paper"
-          icon="brand/paper"
+          id="papercut"
+          name="Papercut"
+          icon="brand/papercut"
           type={SoftwarePreviewType.Info}
-          description="Paper is a Minecraft game server based on Spigot, designed to greatly improve performance and offer more advanced features and API."
+          description="Papercut is a Rust-powered Minecraft game server based on Paper, designed to greatly improve performance and offer more advanced features and API."
         />
         <SoftwarePreview
-          id="velocity"
-          name="Velocity"
-          icon="brand/velocity"
+          id="relay"
+          name="Relay"
+          icon="brand/relay"
           type={SoftwarePreviewType.Info}
-          description="Velocity is a high-performance, scalable Minecraft proxy server that allows players to connect to multiple Minecraft servers under the proxy."
+          description="Relay (Ferrite Relay) is a high-performance, scalable Minecraft proxy server that allows players to connect to multiple Minecraft servers under the proxy."
         />
         <SoftwarePreview
-          id="folia"
-          name="Folia"
-          icon="brand/folia"
+          id="blocklest"
+          name="Blocklest"
+          icon="brand/blocklest"
           type={SoftwarePreviewType.Info}
-          description="Folia is a new fork of Paper that adds regionized multithreading to the server allowing for better performance and scalability."
+          description="Blocklest is a new fork of Papercut that adds regionized multithreading to the server allowing for better performance and scalability."
+        />
+      </div>
+      <div class="mt-2 grid gap-2 px-2 md:grid-cols-3 xl:gap-4">
+        <SoftwarePreview
+          id="velonation"
+          name="Velonation"
+          icon="brand/velonation"
+          type={SoftwarePreviewType.Info}
+          description="Velonation is a fork of Relay (Velocity) with enhancements, offering improved performance and stability as a drop-in replacement."
+          eol
+        />
+        <SoftwarePreview
+          id="void"
+          name="Void"
+          icon="brand/void"
+          type={SoftwarePreviewType.Info}
+          description="Void is a lightweight limbo server replacement for NanoLimbo, forked from Blocklest with stripped features to work as a limbo. Coming soon."
+          eol
         />
       </div>
     </div>
@@ -74,12 +92,12 @@ import SoftwarePreview, { SoftwarePreviewType } from "@/components/data/Software
       <div class="flex-1">
         <h2 class="text-2xl font-semibold md:text-4xl">A diverse plugin ecosystem</h2>
         <p class="mt-3 text-gray-900 md:mt-6 md:text-xl dark:text-gray-100">
-          Crafted by the PaperMC team & contributors, Hangar is our own dedicated plugin repository, now in open beta! A place for
-          developers to host their creations, and server owners to enrich their player&apos;s gameplay. From Administration Tools, to
-          Minigames, you&apos;ll find it all on Hangar.
+          Crafted by the FerriteMC team & contributors, Hangar is our own dedicated plugin repository, now in open beta! A place for
+          developers to host their creations, and server owners to enrich their player's gameplay. From Administration Tools, to
+          Minigames, you'll find it all on Hangar.
         </p>
         <div class="mt-8 flex flex-row gap-4">
-          <Button variant="filled" href="https://hangar.papermc.io/" external> Check out Hangar </Button>
+          <Button variant="filled" href="https://hangar.ferritemc.io/" external> Check out Hangar </Button>
         </div>
       </div>
     </div>
@@ -92,7 +110,7 @@ import SoftwarePreview, { SoftwarePreviewType } from "@/components/data/Software
           Powering <PlayersCount client:load="svelte" ttlMs={12 * 60 * 1000} /> players
         </h2>
         <p class="mt-3 text-gray-900 md:mt-6 md:text-xl dark:text-gray-100">
-          PaperMC&apos;s software powers hundreds of thousands of Minecraft servers on a daily basis, from small single-servers setups to
+          FerriteMC's software powers hundreds of thousands of Minecraft servers on a daily basis, from small single-servers setups to
           massive Minecraft server networks. Designed with utility and performance in mind, it can handle whatever you throw at it.
         </p>
       </div>
@@ -105,7 +123,7 @@ import SoftwarePreview, { SoftwarePreviewType } from "@/components/data/Software
         <h2 class="text-2xl font-semibold md:text-4xl">The promise of stability</h2>
         <p class="mt-3 text-gray-900 md:mt-6 md:text-xl dark:text-gray-100">
           Our software is designed with security and stability in mind. We have consistently been among the first to fix vulnerabilities in
-          the Minecraft space for years, so you can rest assured that PaperMC software is a good choice.
+          the Minecraft space for years, so you can rest assured that FerriteMC software is a good choice.
         </p>
       </div>
     </div>

@@ -31,7 +31,7 @@
   }
 
   async function fetchFresh(): Promise<BStats> {
-    const res = await fetch("/internal-api/paper-playercount");
+    const res = await fetch("/internal-api/ferritemc-playercount");
     if (!res.ok) {
       throw new Error(`Failed to fetch stats: ${res.status}`);
     }
@@ -71,9 +71,9 @@
 </script>
 
 {#if loading && players == null}
-  <span class="inline-block h-[1em] w-12 animate-pulse rounded bg-blue-500/30 align-middle"></span>
+  <span class="inline-block h-[1em] w-12 animate-pulse rounded bg-rust-500/30 align-middle"></span>
 {:else if display}
-  <span class="text-blue-500">{display}</span>
+  <span class="text-rust-500">{display}</span>
 {:else}
-  <span class="text-blue-500">0k+</span>
+  <span class="text-rust-500">0k+</span>
 {/if}

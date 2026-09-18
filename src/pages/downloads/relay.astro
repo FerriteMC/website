@@ -7,14 +7,14 @@ import { fetchDownloadsPageData } from "@/utils/download";
 
 Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=600, stale-while-revalidate=120");
 Astro.response.headers.set("CDN-Cache-Control", "public, max-age=600, stale-while-revalidate=120");
-const data = await fetchDownloadsPageData("velocity", env.WEBSITE_CACHE);
+const data = await fetchDownloadsPageData("relay", env.WEBSITE_CACHE);
 ---
 
 <Layout
-  title="Velocity Downloads"
-  description="Download Velocity, our high-performance Minecraft proxy."
-  keywords={["papermc", "minecraft", "performance", "velocity", "downloads", "jar"]}
-  canonical="/downloads/velocity"
+  title="Relay Downloads"
+  description="Download Relay, our high-performance Minecraft proxy."
+  keywords={["ferritemc", "minecraft", "performance", "relay", "downloads", "jar"]}
+  canonical="/downloads/relay"
 >
-  <SoftwareDownloadPage id="velocity" description="Download Velocity, our high-performance Minecraft proxy." client:load="svelte" {data} />
+  <SoftwareDownloadPage id="relay" description="Download Relay, our high-performance Minecraft proxy." client:load="svelte" {data} />
 </Layout>

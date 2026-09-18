@@ -30,11 +30,11 @@ We would like to thank everyone that worked on this update:
 
 and finally tal5, Dawon, yannicklamprecht and Doc94 for additional help!
 
-If you'd like to support PaperMC as a whole, you can find more information at https://papermc.io/sponsors.
+If you'd like to support FerriteMC as a whole, you can find more information at https://ferritemc.io/sponsors.
 
 ## spark profiler inclusion in Paper
 
-Thanks to riley and Luck, Paper now bundles [spark](https://spark.lucko.me/) as its main profiler for diagnosing causes of lag. Timings is now disabled by default and will be entirely removed at a later date, possibly with 1.22. As a developer, please make sure you remove any custom `Timing` uses by then. You can see our [docs page](https://docs.papermc.io/paper/profiling) as well as the [GitHub Discussions page](https://github.com/PaperMC/Paper/discussions/10565) for more details and also provide feedback there.
+Thanks to riley and Luck, Paper now bundles [spark](https://spark.lucko.me/) as its main profiler for diagnosing causes of lag. Timings is now disabled by default and will be entirely removed at a later date, possibly with 1.22. As a developer, please make sure you remove any custom `Timing` uses by then. You can see our [docs page](https://docs.ferritemc.io/paper/profiling) as well as the [GitHub Discussions page](https://github.com/FerriteMC/Paper/discussions/10565) for more details and also provide feedback there.
 
 ## Configuration changes
 
@@ -53,7 +53,7 @@ The `disable-teleportation-suffocation-check` config option is now gone, as this
 
 In 1.20.5/6, Spigot has made additions to their plugin rewriting that resulted in poor startup performance, adding multiple seconds to each individual larger plugin. This has unfortunately been made slightly worse again in 1.21.¹
 
-We have already mildly improved on it and are working on reducing it by as much as possible, but in the meantime you can work around it by disabling the cross-version compatibility measures by either optionally using [Paper's plugin loader](https://docs.papermc.io/paper/dev/getting-started/paper-plugins) as a developer, or by using the [**`paper.disableOldApiSupport` startup flag**](https://docs.papermc.io/paper/reference/system-properties#paperdisableoldapisupport). **However, the flag will only work if all of your plugins are built against the latest API version.**
+We have already mildly improved on it and are working on reducing it by as much as possible, but in the meantime you can work around it by disabling the cross-version compatibility measures by either optionally using [Paper's plugin loader](https://docs.ferritemc.io/paper/dev/getting-started/paper-plugins) as a developer, or by using the [**`paper.disableOldApiSupport` startup flag**](https://docs.ferritemc.io/paper/reference/system-properties#paperdisableoldapisupport). **However, the flag will only work if all of your plugins are built against the latest API version.**
 
 ## 'Done'-message changes
 
@@ -92,7 +92,7 @@ There's still other issues thanks to ItemMeta clashing hard with Minecraft's new
 
 ## Opportunity to change the git commit author details in Paper commits
 
-If you have previously contributed to our main Paper repository on GitHub and want the email or name that was used on that commit to be changed, you may use the modmail command on our Discord to tell us the new details. As per our planned [repository restructure in the future](https://github.com/orgs/PaperMC/projects/6), the current git history will be overridden, so we thought we might as well fix the details for anyone that needs it.
+If you have previously contributed to our main Paper repository on GitHub and want the email or name that was used on that commit to be changed, you may use the modmail command on our Discord to tell us the new details. As per our planned [repository restructure in the future](https://github.com/orgs/FerriteMC/projects/6), the current git history will be overridden, so we thought we might as well fix the details for anyone that needs it.
 
 ---
 

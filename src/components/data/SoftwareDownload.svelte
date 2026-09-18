@@ -4,15 +4,16 @@
   import SoftwareDownloadButton from "@/components/data/SoftwareDownloadButton.svelte";
   import SoftwareBuilds from "@/components/data/SoftwareBuilds.svelte";
 
-  import PaperIconUrl from "@/assets/brand/paper.svg?url";
-  import VelocityIconUrl from "@/assets/brand/velocity.svg?url";
-  import FoliaIconUrl from "@/assets/brand/folia.svg?url";
-  import WaterfallIconUrl from "@/assets/brand/waterfall-white.svg?url";
+  import PapercutIconUrl from "@/assets/brand/papercut.svg?url";
+  import RelayIconUrl from "@/assets/brand/relay.svg?url";
+  import BlocklestIconUrl from "@/assets/brand/blocklest.svg?url";
+  import VelonationIconUrl from "@/assets/brand/velonation.svg?url";
+  import VoidIconUrl from "@/assets/brand/void.svg?url";
   import type { Snippet } from "svelte";
   import { type ProjectBuildsOrError } from "@/utils/download";
 
   interface Props {
-    id: "paper" | "velocity" | "folia" | "waterfall" | (string & {});
+    id: "papercut" | "relay" | "blocklest" | "velonation" | "void" | (string & {});
     project: ProjectDescriptor;
     stableBuilds: ProjectBuildsOrError;
     experimentalBuilds: ProjectBuildsOrError | null;
@@ -34,10 +35,11 @@
   }: Props = $props();
 
   const ICONS: Record<string, string | undefined> = {
-    paper: PaperIconUrl,
-    velocity: VelocityIconUrl,
-    folia: FoliaIconUrl,
-    waterfall: WaterfallIconUrl,
+    papercut: PapercutIconUrl,
+    relay: RelayIconUrl,
+    blocklest: BlocklestIconUrl,
+    velonation: VelonationIconUrl,
+    void: VoidIconUrl,
   };
 
   let isStable = $state(true);
@@ -125,7 +127,7 @@
         Looking for older builds - or changelogs? We got you!<br />
         <span class="text-gray-700 dark:text-gray-400">
           Even older builds are available in our
-          <a href={`https://fill-ui.papermc.io/projects/${id}`} class="text-gray-700 underline dark:text-gray-400"> build explorer </a>.
+          <a href={`https://fill-ui.ferritemc.io/projects/${id}`} class="text-gray-700 underline dark:text-gray-400"> build explorer </a>.
         </span>
       </p>
 

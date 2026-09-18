@@ -1,0 +1,26 @@
+---
+export const prerender = false;
+import { env } from "cloudflare:workers";
+import Layout from "@/layouts/Layout.astro";
+import SoftwareDownloadPage from "@/components/data/SoftwareDownloadPage.svelte";
+import { fetchDownloadsPageData } from "@/utils/download";
+
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=600, stale-while-revalidate=120");
+Astro.response.headers.set("CDN-Cache-Control", "public, max-age=600, stale-while-revalidate=120");
+const data = await fetchDownloadsPageData("papercut", env.WEBSITE_CACHE);
+---
+
+<Layout
+  title="Papercut"
+  description="Download Papercut, our Rust-powered Minecraft server software offering unrivaled performance and stability."
+  keywords={["ferritemc", "minecraft", "performance", "papercut", "downloads", "jar"]}
+  canonical="/downloads/papercut"
+>
+  <SoftwareDownloadPage
+    id="papercut"
+    description="Download Papercut, our Rust-powered Minecraft server software offering unrivaled performance and stability."
+    experimentalWarning="Download experimental builds of Papercut, our Rust-powered Minecraft server software offering unrivaled performance and stability. Proceed with caution!"
+    client:load="svelte"
+    {data}
+  />
+</Layout>

@@ -1,0 +1,25 @@
+---
+export const prerender = false;
+import { env } from "cloudflare:workers";
+import Layout from "@/layouts/Layout.astro";
+import SoftwareDownloadPage from "@/components/data/SoftwareDownloadPage.svelte";
+import { fetchDownloadsPageData } from "@/utils/download";
+
+Astro.response.headers.set("Cache-Control", "public, max-age=300, s-maxage=600, stale-while-revalidate=120");
+Astro.response.headers.set("CDN-Cache-Control", "public, max-age=600, stale-while-revalidate=120");
+const data = await fetchDownloadsPageData("void", env.WEBSITE_CACHE);
+
+const descriptionHtml = `
+  Void is a lightweight limbo server replacement for NanoLimbo, forked from Blocklest with stripped features to work as a limbo.
+  Coming soon.
+`;
+---
+
+<Layout
+  title="Void Downloads"
+  description="Download Void, our lightweight limbo server replacement for NanoLimbo."
+  keywords={["ferritemc", "minecraft", "performance", "void", "limbo", "nanolimbo", "downloads"]}
+  canonical="/downloads/void"
+>
+  <SoftwareDownloadPage id="void" description={descriptionHtml} eol client:load="svelte" {data} />
+</Layout>

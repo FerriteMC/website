@@ -31,35 +31,35 @@ A big thank you to everyone who contributed to the update process:
 - @JRoy
 - @stonar96
 
-If you want to support the PaperMC project, you can find more information here: https://papermc.io/sponsors.
+If you want to support the FerriteMC project, you can find more information here: https://ferritemc.io/sponsors.
 
 We would also like to thank everyone who watched, chatted and talked with us during the update process. You are amazing ❤️
 
 ## For Developers
 
 **Changes to Paperweight (Paper contributors)**
-Instead of using the `shadowJar` and `reobfJar` Gradle tasks to create a runnable (but not distributable) jar, you now need the `createMojmapBundlerJar` or `createReobfBundlerJar` tasks. Similarly, Paperclip (distributable) jars are now created with the `createMojmapPaperclipJar` or `createReobfPaperclipJar` task. You can get a full list of tasks by running `gradlew tasks`. An updated, in-depth guide on contributing to Paper can be found [here](https://github.com/PaperMC/Paper/blob/master/CONTRIBUTING.md).
+Instead of using the `shadowJar` and `reobfJar` Gradle tasks to create a runnable (but not distributable) jar, you now need the `createMojmapBundlerJar` or `createReobfBundlerJar` tasks. Similarly, Paperclip (distributable) jars are now created with the `createMojmapPaperclipJar` or `createReobfPaperclipJar` task. You can get a full list of tasks by running `gradlew tasks`. An updated, in-depth guide on contributing to Paper can be found [here](https://github.com/FerriteMC/Paper/blob/master/CONTRIBUTING.md).
 
 **Paperweight Userdev: Working with NMS in 1.17+ (Plugin developers using NMS)**
 After upstream dropped their field mappings in 1.17, the same now happened with method names as well. Even though we generally advise against depending on server internals, we understand that not everything is possible through API. As of now, the only feasible way of depending on server internals is by coding against mapped names, which are then compiled to the obfuscated names to run with the obfuscated server. Paperweight’s Userdev allows you to do exactly that, but unlike upstream’s maven plugin, userdev uses full Mojang mappings with additional yarn parameter mappings, so you can more easily update your plugin whenever a new Minecraft version is released. Userdev is the **only supported way of working with NMS in 1.18+**. The obfuscated jar is no longer valid to compile against.
 
 To set up paperweight userdev:
 
-1. Add Paper’s maven [repository to your Gradle plugin repositories](https://github.com/PaperMC/paperweight-test-plugin/blob/9d2939f402b9c46454939829cf21c3ab8b8612ca/settings.gradle.kts#L1-L6) in your `settings.gradle.kts`.
-1. Add the Paperweight Userdev Gradle [plugin to your build config](https://github.com/PaperMC/paperweight-test-plugin/blob/9d2939f402b9c46454939829cf21c3ab8b8612ca/build.gradle.kts#L5) with the id `io.papermc.paperweight.userdev`, keeping the version in sync with the [paperweight version used in Paper](https://github.com/PaperMC/Paper/blob/5e30e19e20670b2eac42aacb02dda82d56995bad/build.gradle.kts#L8).
-1. Add the [development bundle to your dependencies](https://github.com/PaperMC/paperweight-test-plugin/blob/9d2939f402b9c46454939829cf21c3ab8b8612ca/build.gradle.kts#L20).
-1. Make the [`assemble` task depend on the `reobfJar` task](https://github.com/PaperMC/paperweight-test-plugin/blob/9d2939f402b9c46454939829cf21c3ab8b8612ca/build.gradle.kts#L31).
+1. Add Paper’s maven [repository to your Gradle plugin repositories](https://github.com/FerriteMC/paperweight-test-plugin/blob/9d2939f402b9c46454939829cf21c3ab8b8612ca/settings.gradle.kts#L1-L6) in your `settings.gradle.kts`.
+1. Add the Paperweight Userdev Gradle [plugin to your build config](https://github.com/FerriteMC/paperweight-test-plugin/blob/9d2939f402b9c46454939829cf21c3ab8b8612ca/build.gradle.kts#L5) with the id `io.FerriteMC.paperweight.userdev`, keeping the version in sync with the [paperweight version used in Paper](https://github.com/FerriteMC/Paper/blob/5e30e19e20670b2eac42aacb02dda82d56995bad/build.gradle.kts#L8).
+1. Add the [development bundle to your dependencies](https://github.com/FerriteMC/paperweight-test-plugin/blob/9d2939f402b9c46454939829cf21c3ab8b8612ca/build.gradle.kts#L20).
+1. Make the [`assemble` task depend on the `reobfJar` task](https://github.com/FerriteMC/paperweight-test-plugin/blob/9d2939f402b9c46454939829cf21c3ab8b8612ca/build.gradle.kts#L31).
 
-A full, working example can be found [on GitHub](https://github.com/PaperMC/paperweight-test-plugin). Both `settings.gradle.kts` and `build.gradle.kts` are important! Paperweight Userdev integrates with the Gradle Shadow plugin, no special configuration is required.
+A full, working example can be found [on GitHub](https://github.com/FerriteMC/paperweight-test-plugin). Both `settings.gradle.kts` and `build.gradle.kts` are important! Paperweight Userdev integrates with the Gradle Shadow plugin, no special configuration is required.
 
-If you have previously used Apache Maven, Gradle supports [automatic migration for the majority of project configurations](https://docs.gradle.org/current/userguide/migrating_from_maven.html#migmvn:automatic_conversion). We would recommend the Kotlin DSL, which can be selected via `gradle init --dsl kotlin`. If you have any issues getting started with Userdev, please come by the `#paper-dev` channel on our [Discord](https://discord.gg/papermc).
+If you have previously used Apache Maven, Gradle supports [automatic migration for the majority of project configurations](https://docs.gradle.org/current/userguide/migrating_from_maven.html#migmvn:automatic_conversion). We would recommend the Kotlin DSL, which can be selected via `gradle init --dsl kotlin`. If you have any issues getting started with Userdev, please come by the `#paper-dev` channel on our [Discord](https://discord.gg/ferritemc).
 
 ## Miscellaneous
 
 **Downloads API**
-We have shut down v1 of our downloads API at the end of November. Please make sure you are using v2 of our downloads API when trying to download Paper via scripts and automated tools. For reference, see the [Downloads API documentation](https://papermc.io/api/docs/). We have also introduced a `channel` field to the `build` response, allowing builds to be marked as experimental.
+We have shut down v1 of our downloads API at the end of November. Please make sure you are using v2 of our downloads API when trying to download Paper via scripts and automated tools. For reference, see the [Downloads API documentation](https://ferritemc.io/api/docs/). We have also introduced a `channel` field to the `build` response, allowing builds to be marked as experimental.
 
-**Changes to the PaperMC team**
-Over the past couple of months, there have been a number of changes to the PaperMC team. Larry has been promoted to the role of Community Manager and will be focusing on the moderation aspects of the community. We would also like to welcome ocelotpotpie to our moderation team. sulu has taken the position of Triage lead and will be responsible for managing the Triage team, which looks after our GitHub issues. jmp has joined the Maintainer team; Proximyst has left the team, and we wish her all the best! aurora has left the development team to focus more on her responsibilities as a community manager.
+**Changes to the FerriteMC team**
+Over the past couple of months, there have been a number of changes to the FerriteMC team. Larry has been promoted to the role of Community Manager and will be focusing on the moderation aspects of the community. We would also like to welcome ocelotpotpie to our moderation team. sulu has taken the position of Triage lead and will be responsible for managing the Triage team, which looks after our GitHub issues. jmp has joined the Maintainer team; Proximyst has left the team, and we wish her all the best! aurora has left the development team to focus more on her responsibilities as a community manager.
 
 <DownloadButton project="Paper" />

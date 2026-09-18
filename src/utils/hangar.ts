@@ -9,6 +9,6 @@ export interface HangarProjectListPagination {
 }
 
 export const getHangarProjects = (platform: string): Promise<HangarProjectList> =>
-  fetch(`https://hangar.papermc.io/api/v1/projects?limit=1&offset=0&sort=-stars&platform=${platform.toUpperCase()}`).then((res) =>
+  fetch(`https://hangar.ferritemc.io/api/v1/projects?limit=1&offset=0&sort=-stars&platform=${platform.toUpperCase()}`).then((res) =>
     res.json()
   );

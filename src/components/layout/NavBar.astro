@@ -18,7 +18,7 @@ import LogoMarkerLight from "@/assets/brand/logo-marker-light.svg";
     <a href="/" class="leading-none" tabindex="-1" aria-hidden={true}>
       <picture>
         <source srcset={LogoMarkerDark.src} media="(prefers-color-scheme: dark)" />
-        <img src={LogoMarkerLight.src} alt="PaperMC" class="block h-12 cursor-pointer" />
+        <img src={LogoMarkerLight.src} alt="FerriteMC" class="block h-12 cursor-pointer" />
       </picture>
     </a>
     <div
@@ -26,16 +26,17 @@ import LogoMarkerLight from "@/assets/brand/logo-marker-light.svg";
       class="bg-background-light-10 dark:bg-background-dark-90 absolute top-full right-0 left-0 flex w-full flex-col gap-4 p-4 shadow-lg max-md:hidden! md:relative md:flex md:w-auto md:flex-row md:items-center md:gap-0 md:bg-transparent md:p-0 md:shadow-none"
     >
       <NavDropDown label="Software">
-        <NavDropDownLink href="/software/paper">Paper</NavDropDownLink>
-        <NavDropDownLink href="/software/folia">Folia</NavDropDownLink>
-        <NavDropDownLink href="/software/velocity">Velocity</NavDropDownLink>
-        <NavDropDownLink href="/software/waterfall" eol>Waterfall</NavDropDownLink>
+        <NavDropDownLink href="/software/papercut">Papercut</NavDropDownLink>
+        <NavDropDownLink href="/software/blocklest">Blocklest</NavDropDownLink>
+        <NavDropDownLink href="/software/relay">Relay</NavDropDownLink>
+        <NavDropDownLink href="/software/velonation" eol>Velonation</NavDropDownLink>
+        <NavDropDownLink href="/software/void" eol>Void</NavDropDownLink>
       </NavDropDown>
-      <NavLink href="https://hangar.papermc.io/" target="_blank" className="inline-flex items-center">
+      <NavLink href="https://hangar.ferritemc.io/" target="_blank" className="inline-flex items-center">
         Plugins
         <Icon name="icons/heroicons/arrow-top-right-on-square" class="ml-1 size-4 align-sub" />
       </NavLink>
-      <NavLink href="https://docs.papermc.io/" target="_blank" className="inline-flex items-center">
+      <NavLink href="https://docs.ferritemc.io/" target="_blank" className="inline-flex items-center">
         Docs
         <Icon name="icons/heroicons/arrow-top-right-on-square" class="ml-1 size-4 align-sub" />
       </NavLink>
@@ -46,8 +47,8 @@ import LogoMarkerLight from "@/assets/brand/logo-marker-light.svg";
 
     <div class="grow"></div>
 
-    <IconButton icon="icons/fontawesome/discord-brands" label="Discord" href="https://discord.gg/papermc" external />
-    <IconButton icon="icons/fontawesome/github-brands" label="GitHub" href="https://github.com/PaperMC" external />
+    <IconButton icon="icons/fontawesome/discord-brands" label="Discord" href="https://discord.gg/ferritemc" external />
+    <IconButton icon="icons/fontawesome/github-brands" label="GitHub" href="https://github.com/FerriteMC" external />
     <IconButton icon="icons/lucide/rss" label="RSS Feed" href="/news/rss.xml" external />
   </div>
 </nav>

@@ -1,11 +1,11 @@
 import type { APIRoute } from "astro";
-import { fetchPaperBstatsPlayerCount, PAPER_PLAYERCOUNT_KEY } from "@/utils/bstats";
+import { fetchFerriteMCBstatsPlayerCount, FERRITEMC_PLAYERCOUNT_KEY } from "@/utils/bstats";
 import { env } from "cloudflare:workers";
 
 export const GET: APIRoute = async () => {
   const kv = env.WEBSITE_CACHE;
   if (kv) {
-    const cached = await kv.get(PAPER_PLAYERCOUNT_KEY);
+    const cached = await kv.get(FERRITEMC_PLAYERCOUNT_KEY);
     if (cached !== null) {
       const { players } = JSON.parse(cached);
       return new Response(JSON.stringify({ players }), {
@@ -18,7 +18,7 @@ export const GET: APIRoute = async () => {
     }
   }
 
-  const { players, error } = await fetchPaperBstatsPlayerCount();
+  const { players, error } = await fetchFerriteMCBstatsPlayerCount();
 
   if (error) {
     return new Response(JSON.stringify({ error }), {

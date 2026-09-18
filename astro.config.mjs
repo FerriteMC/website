@@ -26,7 +26,7 @@ function noExternalPlugin() {
 }
 
 export default defineConfig({
-  site: "https://papermc.io",
+  site: "https://ferritemc.io",
 
   vite: {
     plugins: [tailwindcss(), noExternalPlugin()],

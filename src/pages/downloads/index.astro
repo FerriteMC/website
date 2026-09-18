@@ -5,8 +5,8 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout
   title="Downloads"
-  description="Find downloads for our software – including Paper, Velocity, and Waterfall."
-  keywords={["papermc", "minecraft", "performance", "paper", "velocity", "waterfall", "downloads"]}
+  description="Find downloads for our software – including Papercut, Blocklest, Relay, and Velonation."
+  keywords={["ferritemc", "minecraft", "performance", "papercut", "relay", "blocklest", "velonation", "downloads"]}
   canonical="/downloads"
 >
   <header class="mx-auto flex max-w-4xl flex-col items-center gap-2 px-4 pt-32 pb-16 lg:pt-28 lg:pb-12">
@@ -17,34 +17,42 @@ import Layout from "@/layouts/Layout.astro";
     <h2 class="mt-4 text-center text-2xl font-medium">Server Software</h2>
     <div class="grid gap-2 px-2 md:grid-cols-2 xl:gap-4">
       <SoftwarePreview
-        id="paper"
-        name="Paper"
-        icon="brand/paper"
-        description="Paper is a Minecraft game server, designed to greatly improve performance and offer more advanced features and API."
+        id="papercut"
+        name="Papercut"
+        icon="brand/papercut"
+        description="Papercut is a Rust-powered Minecraft game server, designed to greatly improve performance and offer more advanced features and API."
         type={SoftwarePreviewType.Download}
       />
       <SoftwarePreview
-        id="folia"
-        name="Folia"
-        icon="brand/folia"
-        description="Folia is a new fork of Paper that adds regionized multithreading to the server."
+        id="blocklest"
+        name="Blocklest"
+        icon="brand/blocklest"
+        description="Blocklest is a new fork of Papercut that adds regionized multithreading to the server."
         type={SoftwarePreviewType.Download}
+      />
+      <SoftwarePreview
+        id="void"
+        name="Void"
+        icon="brand/void"
+        description="Void is a lightweight limbo server replacement for NanoLimbo, forked from Blocklest with stripped features. Coming soon."
+        type={SoftwarePreviewType.Download}
+        eol
       />
     </div>
     <h2 class="mt-4 text-center text-2xl font-medium">Proxy Software</h2>
     <div class="grid gap-2 px-2 md:grid-cols-2 xl:gap-4">
       <SoftwarePreview
-        id="velocity"
-        name="Velocity"
-        icon="brand/velocity"
-        description="Velocity is the modern, high-performance Minecraft server proxy."
+        id="relay"
+        name="Relay"
+        icon="brand/relay"
+        description="Relay is the modern, high-performance Minecraft server proxy."
         type={SoftwarePreviewType.Download}
       />
       <SoftwarePreview
-        id="waterfall"
-        name="Waterfall"
-        icon="brand/waterfall"
-        description="Waterfall is a legacy drop-in BungeeCord replacement with some additional improvements to performance and stability."
+        id="velonation"
+        name="Velonation"
+        icon="brand/velonation"
+        description="Velonation is a legacy drop-in Velocity replacement with some additional improvements to performance and stability."
         type={SoftwarePreviewType.Download}
         eol
       />

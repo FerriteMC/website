@@ -1,6 +1,6 @@
-# papermc.io [![Discord](https://img.shields.io/discord/289587909051416579.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/papermc) ![License](https://img.shields.io/github/license/PaperMC/website)
+# ferritemc.io [![Discord](https://img.shields.io/discord/289587909051416579.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/ferritemc) ![License](https://img.shields.io/github/license/FerriteMC/website)
 
-The official [PaperMC](https://papermc.io) website — built with **Astro 6**, powered by **Bun**, and styled using **Tailwind CSS v4**. Content in this repository is published to [papermc.io](https://papermc.io) for viewing.
+The official [FerriteMC](https://ferritemc.io) website — built with **Astro 6**, powered by **Bun**, and styled using **Tailwind CSS v4**. Content in this repository is published to [ferritemc.io](https://ferritemc.io) for viewing.
 
 ---
 
@@ -18,7 +18,7 @@ How to get the project running on your local machine for development.
 1. Clone the repository. If you plan to make changes, create a fork first!
 
    ```bash
-   git clone --branch feat/astro https://github.com/PaperMC/website.git
+   git clone https://github.com/FerriteMC/website.git
    cd website
    ```
 
@@ -113,7 +113,7 @@ Submit a pull request targeting the main branch.
 ## License
 
 The supporting code is
-[MIT](https://github.com/PaperMC/website/blob/main/LICENSE) licensed.
+[MIT](https://github.com/FerriteMC/website/blob/main/LICENSE) licensed.
 
-The PaperMC logomark is subject to its [own terms](https://docs.papermc.io/misc/assets) and does not
+The FerriteMC logomark is subject to its [own terms](https://docs.ferritemc.io/misc/assets) and does not
 inherit a license from any of the projects it represents.

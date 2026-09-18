@@ -22,7 +22,7 @@ We would like to thank everyone that worked on this update:
   ]}
 />
 
-If you'd like to support PaperMC as a whole, you can find more information at https://papermc.io/sponsors.
+If you'd like to support FerriteMC as a whole, you can find more information at https://ferritemc.io/sponsors.
 
 ## Changes for server owners
 
@@ -43,27 +43,27 @@ _This section only affects plugin devs using server internals, whether directly 
 Starting with 26.1, Mojang will no longer provide obfuscated server jars and instead have them contain all class, method, field names, etc. As Spigot is moving to unobfuscated server jars for 26.1 as well, we will **fully drop the internal remapper in 26.1**.
 
 **Hence, now is a good time to make sure your plugins are able to run on server jars that are not obfuscated.**
-You can do this by starting a 1.21.11 Paper server using the `-Dpaper.disablePluginRemapping=true` startup flag and removing the `reobfJar` step from your [paperweight-userdev config](https://docs.papermc.io/paper/dev/userdev/#compiling-to-mojang-mappings).
+You can do this by starting a 1.21.11 Paper server using the `-Dpaper.disablePluginRemapping=true` startup flag and removing the `reobfJar` step from your [paperweight-userdev config](https://docs.ferritemc.io/paper/dev/userdev/#compiling-to-mojang-mappings).
 
-If your plugin is still using Spigot-mapped internal names (such as obfuscated class/field/method names or Spigot names like `EntityHuman` and `PacketPlayIn...`), please prepare migration as soon as you can, as your plugin will not work on 26.1, no matter if you are using Paper or not. Ideally, use our [userdev plugin](https://docs.papermc.io/paper/dev/userdev/) if you aren't already. If you aren't using Gradle for building your plugin, consider switching to it, as it _really_ makes the ordeal much simpler.
+If your plugin is still using Spigot-mapped internal names (such as obfuscated class/field/method names or Spigot names like `EntityHuman` and `PacketPlayIn...`), please prepare migration as soon as you can, as your plugin will not work on 26.1, no matter if you are using Paper or not. Ideally, use our [userdev plugin](https://docs.ferritemc.io/paper/dev/userdev/) if you aren't already. If you aren't using Gradle for building your plugin, consider switching to it, as it _really_ makes the ordeal much simpler.
 
 ### Gamerule changes
 
-Gamerules have been turned into a registry in Vanilla, so their names were changed from camelCase to snake_case and some gamerules merged or changed. The `GameRule` class still contains the old names for now, but you should replace their use with [GameRules](https://jd.papermc.io/paper/1.21.11/org/bukkit/GameRules.html).
+Gamerules have been turned into a registry in Vanilla, so their names were changed from camelCase to snake_case and some gamerules merged or changed. The `GameRule` class still contains the old names for now, but you should replace their use with [GameRules](https://jd.ferritemc.io/paper/1.21.11/org/bukkit/GameRules.html).
 
 ### Bed event changes
 
-Beds had a few substantial changes in Vanilla, so our events were updated with their new functionality, too: The [BedEnterAction](https://jd.papermc.io/paper/1.21.11/io/papermc/paper/block/bed/BedEnterAction.html) via `enterAction` in `PlayerBedEnterEvent` and `PlayerBedFailEnterEvent` contains more specific action context than the existing `failReason` getter.
+Beds had a few substantial changes in Vanilla, so our events were updated with their new functionality, too: The [BedEnterAction](https://jd.ferritemc.io/paper/1.21.11/io/FerriteMC/paper/block/bed/BedEnterAction.html) via `enterAction` in `PlayerBedEnterEvent` and `PlayerBedFailEnterEvent` contains more specific action context than the existing `failReason` getter.
 
 ### Other additions and changes
 
 Beyond the API for all the new 1.21.11 features, here is a small selection of other changes and additions we have made since the stable release of 1.21.10:
 
-- [WorldBorder](<https://jd.papermc.io/paper/1.21.11/org/bukkit/WorldBorder.html#changeSize(double,long)>) and [WorldBorderBoundsChangeEvent](<https://jd.papermc.io/paper/1.21.11/io/papermc/paper/event/world/border/WorldBorderBoundsChangeEvent.html#getDurationTicks()>) have had their methods returning/using millisecond durations deprecated and replaced with methods using tick durations instead
-- Added API on `LivingEntity` to [change waypoint styling](<https://jd.papermc.io/paper/1.21.11/org/bukkit/entity/LivingEntity.html#setWaypointStyle(net.kyori.adventure.key.Key)>)
-- Added [wobble API](<https://jd.papermc.io/paper/1.21.11/org/bukkit/block/DecoratedPot.html#startWobble(org.bukkit.block.DecoratedPot.WobbleStyle)>) on `DecoratedPot`
-- Added [more data getters](<https://jd.papermc.io/paper/1.21.11/org/bukkit/JukeboxSong.html#getDescription()>) to `JukeboxSong`
-- Added `MapPalette.getNearestColor` to get the [closest color in the map palette to a given color](<https://jd.papermc.io/paper/1.21.11/org/bukkit/map/MapPalette.html#getNearestColor(java.awt.Color)>)
+- [WorldBorder](<https://jd.ferritemc.io/paper/1.21.11/org/bukkit/WorldBorder.html#changeSize(double,long)>) and [WorldBorderBoundsChangeEvent](<https://jd.ferritemc.io/paper/1.21.11/io/FerriteMC/paper/event/world/border/WorldBorderBoundsChangeEvent.html#getDurationTicks()>) have had their methods returning/using millisecond durations deprecated and replaced with methods using tick durations instead
+- Added API on `LivingEntity` to [change waypoint styling](<https://jd.ferritemc.io/paper/1.21.11/org/bukkit/entity/LivingEntity.html#setWaypointStyle(net.kyori.adventure.key.Key)>)
+- Added [wobble API](<https://jd.ferritemc.io/paper/1.21.11/org/bukkit/block/DecoratedPot.html#startWobble(org.bukkit.block.DecoratedPot.WobbleStyle)>) on `DecoratedPot`
+- Added [more data getters](<https://jd.ferritemc.io/paper/1.21.11/org/bukkit/JukeboxSong.html#getDescription()>) to `JukeboxSong`
+- Added `MapPalette.getNearestColor` to get the [closest color in the map palette to a given color](<https://jd.ferritemc.io/paper/1.21.11/org/bukkit/map/MapPalette.html#getNearestColor(java.awt.Color)>)
 - Added `fix-far-end-terrain-generation` config option to allow disabling our fix for MC-159283 to instead use Vanilla's end ring terrain
 
 ---

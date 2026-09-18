@@ -1,8 +1,8 @@
 const BSTATS_URL = "https://bstats.org/api/v1/plugins/580/charts/players/data/?maxElements=1";
 
-export const PAPER_PLAYERCOUNT_KEY = "paper-playercount";
+export const FERRITEMC_PLAYERCOUNT_KEY = "ferritemc-playercount";
 
-export async function fetchPaperBstatsPlayerCount(): Promise<{ players: number; error?: string }> {
+export async function fetchFerriteMCBstatsPlayerCount(): Promise<{ players: number; error?: string }> {
   const res = await fetch(BSTATS_URL);
 
   if (!res.ok) {

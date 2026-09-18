@@ -1,0 +1,40 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SoftwareHeader from "@/components/layout/SoftwareHeader.astro";
+import Button from "@/components/input/Button.astro";
+
+import CommunityImage from "@/assets/images/community.png";
+
+import { Image } from "astro:assets";
+---
+
+<Layout
+  title="Void"
+  description="Void is a lightweight limbo server replacement for NanoLimbo, forked from Blocklest with stripped features."
+  keywords={["void", "limbo", "minecraft", "nanolimbo", "ferritemc"]}
+  canonical="/software/void"
+>
+  <SoftwareHeader id="void" name="Void" icon="brand/void" eol>
+    <span slot="header">Void — lightweight limbo server</span>
+    <span slot="description"
+      >Void is a NanoLimbo replacement, forked from Blocklest with stripped features to work as a limbo. Coming soon.</span
+    >
+  </SoftwareHeader>
+  <section id="facts" class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 md:gap-12 md:py-16">
+    <div class="flex flex-col items-center gap-6 md:flex-row md:gap-8 xl:gap-24">
+      <div class="flex-1">
+        <h2 class="text-2xl font-semibold md:text-4xl">Lightweight limbo server</h2>
+        <p class="mt-3 text-gray-900 md:mt-6 md:text-xl dark:text-gray-100">
+          Void is designed as a lightweight alternative to NanoLimbo, handling player connections when they are not yet assigned to a
+          specific server. It is forked from Blocklest with features stripped to focus on the limbo use case.
+        </p>
+        <div class="mt-8 flex flex-row gap-4">
+          <Button variant="filled" href="/downloads/void" dense> Downloads </Button>
+        </div>
+      </div>
+      <div class="relative aspect-video w-full flex-1 overflow-clip rounded-xl">
+        <Image alt="Community" src={CommunityImage} class="h-full w-full object-cover" />
+      </div>
+    </div>
+  </section>
+</Layout>

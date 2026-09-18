@@ -1,6 +1,6 @@
 import { handle } from "@astrojs/cloudflare/handler";
 import { downloadsPageDataKvKey, fetchDownloadsPageData } from "./utils/download";
-import { PAPER_PLAYERCOUNT_KEY, fetchPaperBstatsPlayerCount } from "./utils/bstats";
+import { FERRITEMC_PLAYERCOUNT_KEY, fetchFerriteMCBstatsPlayerCount } from "./utils/bstats";
 
 export default {
   async fetch(request, env, ctx) {
@@ -13,7 +13,7 @@ export default {
 } satisfies ExportedHandler<Env>;
 
 async function updateDownloadsPageCache(env: Env) {
-  const projects = ["paper", "velocity", "waterfall", "folia"];
+  const projects = ["papercut", "relay", "velonation", "blocklest"];
 
   for (const project of projects) {
     const data = await fetchDownloadsPageData(project);
@@ -28,8 +28,8 @@ async function updateDownloadsPageCache(env: Env) {
 }
 
 async function updateStatsCache(env: Env) {
-  const { players, error } = await fetchPaperBstatsPlayerCount();
+  const { players, error } = await fetchFerriteMCBstatsPlayerCount();
   if (!error) {
-    await env.WEBSITE_CACHE.put(PAPER_PLAYERCOUNT_KEY, JSON.stringify({ players }));
+    await env.WEBSITE_CACHE.put(FERRITEMC_PLAYERCOUNT_KEY, JSON.stringify({ players }));
   }
 }

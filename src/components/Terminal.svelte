@@ -39,11 +39,11 @@
         response = "Redirecting...";
         break;
       case "plugins":
-        window.location.href = "https://hangar.papermc.io";
+        window.location.href = "https://hangar.ferritemc.io";
         response = "Redirecting...";
         break;
       case "docs":
-        window.location.href = "https://docs.papermc.io";
+        window.location.href = "https://docs.ferritemc.io";
         response = "Redirecting...";
         break;
       case "news":
@@ -97,7 +97,7 @@
       }
 
       let currentArgs = "";
-      for (const ch of " -jar paper.jar") {
+      for (const ch of " -jar papercut.jar") {
         if (cancelled) return;
         currentArgs += ch;
         args = currentArgs;
